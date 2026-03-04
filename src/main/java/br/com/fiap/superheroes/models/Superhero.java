@@ -1,0 +1,13 @@
+package br.com.fiap.superheroes.models;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class Superhero {
+    private Long id;
+    private String name;
+    private String secretIdentity;
+    private String power;
+}
