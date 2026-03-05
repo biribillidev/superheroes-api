@@ -8,6 +8,7 @@ import lombok.Data;
 public class Superhero {
     private Long id;
     private String name;
-    private String secretIdentity;
-    private String power;
+    private String superPower;
+    private int level;
+    private Boolean isAlive;
 }

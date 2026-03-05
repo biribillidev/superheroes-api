@@ -18,7 +18,7 @@ public class SuperheroController {
     @Autowired
     private SuperheroService service;
 
-    @GetMapping("/all")
+    @GetMapping
     public List<Superhero> listAll(){
         return service.getAllHeroes();
     }
@@ -27,16 +27,5 @@ public class SuperheroController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public Superhero createHero(@RequestBody Superhero superhero){
         return service.addHero(superhero);
-    }
-
-    @GetMapping("/{id}")
-    public Superhero getHeroById(@PathVariable Long id){
-        log.info("Obtaining hero {} information... ", id);
-        var optionalHero = service.getHeroById(id);
-
-        if (optionalHero.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
-        return optionalHero.get();
     }
 }
